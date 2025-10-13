@@ -1,5 +1,5 @@
 import { Outlet,useLocation } from "react-router"
-import Navbar from "./Navabar"
+import Navbar from "./Navbar"
 import Footer from "./Footer"
 import axios from 'axios';
 import { useEffect } from "react";
