@@ -7,7 +7,7 @@ const FeedCard = (data)=>{
 
     const handleFeeds = async(status,toUserId)=>{
         try{
-            const res = await axios.post("http://localhost:3000/request/"+status+"/"+toUserId,{},{withCredentials:true});
+            const res = await axios.post("/api/request/"+status+"/"+toUserId,{},{withCredentials:true});
             dispatch(removeFeed(toUserId));
         }catch(err){
             console.log("ERROR : "+err.message);
