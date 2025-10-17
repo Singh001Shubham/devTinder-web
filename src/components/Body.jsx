@@ -20,7 +20,7 @@ function Body(){
         return;
         }
      try {
-      const userData = await axios.get("http://localhost:3000/profile", {
+      const userData = await axios.get("/api/profile", {
         withCredentials: true
      });
      dispatch(addUser(userData.data))
