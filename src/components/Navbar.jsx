@@ -12,7 +12,7 @@ function Navbar(){
   const handleLogout = async(e)=>{
     e.preventDefault();
     try{
-      await axios.post("http://localhost:3000/logout",{},{withCredentials:true})
+      await axios.post("/api/logout",{},{withCredentials:true})
       dispatch(removeUser());
       navigate("/login")
     }catch(err){
