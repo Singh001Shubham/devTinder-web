@@ -19,7 +19,7 @@ function Login(){
     const handleSubmit= async(e)=>{
         e.preventDefault();
         try{
-          const response = await axios.post("http://localhost:3000/login",{
+          const response = await axios.post("/api/login",{
             emailId:emailId,
             password:password
           },{withCredentials:true}) 
@@ -35,7 +35,7 @@ function Login(){
     const handleSignup= async(e)=>{
         e.preventDefault();
         try{
-          const response = await axios.post("http://localhost:3000/signup",{
+          const response = await axios.post("/api/signup",{
             emailId:emailId,
             password:password,
             firstName : firstName,
