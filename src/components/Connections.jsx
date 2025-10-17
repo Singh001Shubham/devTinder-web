@@ -28,7 +28,7 @@ const Connections = ()=>{
     const getConnections = async()=>{
       
         try{
-            const connection = await axios.get("http://localhost:3000/user/connections",{withCredentials:true})
+            const connection = await axios.get("/api/user/connections",{withCredentials:true})
            
             dispatch(addConnections(connection.data.data))
             
