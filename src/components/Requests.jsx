@@ -31,7 +31,7 @@ const responsive = {
     const getPendingRequests = async()=>{
       
         try{
-            const res = await axios.get("http://localhost:3000/user/pendingRequests",{withCredentials:true})
+            const res = await axios.get("/api/user/pendingRequests",{withCredentials:true})
            
             dispatch(addRequest(res.data.data))
             
@@ -46,7 +46,7 @@ const responsive = {
        // e.preventDefault();
        console.log(status,id)
         try{
-            const res = await axios.post("http://localhost:3000/request/review/"+status+"/"+id,{},{withCredentials:true})
+            const res = await axios.post("/api/request/review/"+status+"/"+id,{},{withCredentials:true})
             //console.log(res)
             dispatch(removeRequest(id))
             
