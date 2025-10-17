@@ -31,7 +31,7 @@ export default function Feed(){
 
     const getFeed = async()=>{
         try{
-            const data = await axios.get("http://localhost:3000/feeds?page=1&limit=10",{withCredentials:true});
+            const data = await axios.get("/api/feeds?page=1&limit=10",{withCredentials:true});
             dispatch(addFeed(data?.data?.data))
         }catch(error){
             console.log("Error : "+error.message)
