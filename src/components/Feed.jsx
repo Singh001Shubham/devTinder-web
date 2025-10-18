@@ -32,7 +32,11 @@ export default function Feed(){
 
     const getFeed = async()=>{
         try{
+<<<<<<< HEAD
             const data = await axios.get(API_BASE_URL+"feeds?page=1&limit=10",{withCredentials:true});
+=======
+            const data = await axios.get("/api/feeds?page=1&limit=10",{withCredentials:true});
+>>>>>>> a9684e75126a057b19bec4a0dee736624f6ed0d1
             dispatch(addFeed(data?.data?.data))
         }catch(error){
             console.log("Error : "+error.message)

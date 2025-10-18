@@ -20,7 +20,11 @@ function Login(){
     const handleSubmit= async(e)=>{
         e.preventDefault();
         try{
+<<<<<<< HEAD
           const response = await axios.post(API_BASE_URL+"login",{
+=======
+          const response = await axios.post("/api/login",{
+>>>>>>> a9684e75126a057b19bec4a0dee736624f6ed0d1
             emailId:emailId,
             password:password
           },{withCredentials:true}) 
@@ -36,7 +40,11 @@ function Login(){
     const handleSignup= async(e)=>{
         e.preventDefault();
         try{
+<<<<<<< HEAD
           const response = await axios.post(API_BASE_URL+"signup",{
+=======
+          const response = await axios.post("/api/signup",{
+>>>>>>> a9684e75126a057b19bec4a0dee736624f6ed0d1
             emailId:emailId,
             password:password,
             firstName : firstName,
