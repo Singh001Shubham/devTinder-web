@@ -1,11 +1,12 @@
 import { Outlet,useLocation } from "react-router"
-import Navbar from "./Navabar"
+import Navbar from "./Navbar"
 import Footer from "./Footer"
 import axios from 'axios';
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { useNavigate } from "react-router";
+import API_BASE_URL from "../constants/constant"
 
 function Body(){
   //  const location = useLocation();
@@ -20,7 +21,7 @@ function Body(){
         return;
         }
      try {
-      const userData = await axios.get("http://localhost:3000/profile", {
+      const userData = await axios.get(API_BASE_URL+"profile", {
         withCredentials: true
      });
      dispatch(addUser(userData.data))

@@ -4,6 +4,7 @@ import { addConnections,removeConnections } from "../utils/connectionSlice";
 import {useDispatch, useSelector} from "react-redux";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import API_BASE_URL from "../constants/constant"
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -28,7 +29,7 @@ const Connections = ()=>{
     const getConnections = async()=>{
       
         try{
-            const connection = await axios.get("http://localhost:3000/user/connections",{withCredentials:true})
+            const connection = await axios.get(API_BASE_URL+ "user/connections",{withCredentials:true})
            
             dispatch(addConnections(connection.data.data))
             

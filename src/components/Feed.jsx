@@ -5,6 +5,7 @@ import { addFeed,removeFeed } from "../utils/feedSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import API_BASE_URL from "../constants/constant"
 
 
 const responsive = {
@@ -31,7 +32,7 @@ export default function Feed(){
 
     const getFeed = async()=>{
         try{
-            const data = await axios.get("http://localhost:3000/feeds?page=1&limit=10",{withCredentials:true});
+            const data = await axios.get(API_BASE_URL+"feeds?page=1&limit=10",{withCredentials:true});
             dispatch(addFeed(data?.data?.data))
         }catch(error){
             console.log("Error : "+error.message)

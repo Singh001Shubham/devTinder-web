@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import axios from "axios";
 import { useNavigate } from 'react-router';
 import { removeUser } from '../utils/userSlice';
+import API_BASE_URL from "../constants/constant"
 
 
 
@@ -12,7 +13,7 @@ function Navbar(){
   const handleLogout = async(e)=>{
     e.preventDefault();
     try{
-      await axios.post("http://localhost:3000/logout",{},{withCredentials:true})
+      await axios.post(API_BASE_URL+"logout",{},{withCredentials:true})
       dispatch(removeUser());
       navigate("/login")
     }catch(err){

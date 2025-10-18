@@ -2,12 +2,13 @@ import '../App.css';
 import axios from "axios";
 import {useDispatch} from "react-redux";
 import { removeFeed } from '../utils/feedSlice';
+import API_BASE_URL from "../constants/constant"
 const FeedCard = (data)=>{
     const dispatch = useDispatch();
 
     const handleFeeds = async(status,toUserId)=>{
         try{
-            const res = await axios.post("http://localhost:3000/request/"+status+"/"+toUserId,{},{withCredentials:true});
+            const res = await axios.post(API_BASE_URL+"request/"+status+"/"+toUserId,{},{withCredentials:true});
             dispatch(removeFeed(toUserId));
         }catch(err){
             console.log("ERROR : "+err.message);
