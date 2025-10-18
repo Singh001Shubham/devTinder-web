@@ -18,11 +18,7 @@ const EditProfile = ({user})=>{
     const SaveProfile = async()=>{
         seterror("")
         try{
-<<<<<<< HEAD
           const res =  await axios.patch(API_BASE_URL+"profile/edit",{
-=======
-          const res =  await axios.patch("/api/profile/edit",{
->>>>>>> a9684e75126a057b19bec4a0dee736624f6ed0d1
             firstName,
             lastName,
             age,

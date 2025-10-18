@@ -21,11 +21,7 @@ function Body(){
         return;
         }
      try {
-<<<<<<< HEAD
       const userData = await axios.get(API_BASE_URL+"profile", {
-=======
-      const userData = await axios.get("/api/profile", {
->>>>>>> a9684e75126a057b19bec4a0dee736624f6ed0d1
         withCredentials: true
      });
      dispatch(addUser(userData.data))
