@@ -29,11 +29,7 @@ const Connections = ()=>{
     const getConnections = async()=>{
       
         try{
-<<<<<<< HEAD
             const connection = await axios.get(API_BASE_URL+ "user/connections",{withCredentials:true})
-=======
-            const connection = await axios.get("/api/user/connections",{withCredentials:true})
->>>>>>> a9684e75126a057b19bec4a0dee736624f6ed0d1
            
             dispatch(addConnections(connection.data.data))
             
