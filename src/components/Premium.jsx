@@ -9,8 +9,9 @@ const Premium = ()=>{
             const check = await axios.get(API_BASE_URL+"premium/check",{
                 withCredentials:true
             })
-            console.log({check})
+            // console.log(check.data.userType)
             setpremiumMember(check.data.userType)
+            // console.log(premiumMember)
         }catch(err){
             console.log("Error : "+err.message)
         }
@@ -48,7 +49,9 @@ const Premium = ()=>{
     useEffect(()=>{
         isPremium()
     },[]);
-    return !premiumMember?(
+                // console.log(premiumMember)
+
+    return premiumMember==='false'?(
         <>
             <div className="m-10">
                 <div className="flex w-full">
