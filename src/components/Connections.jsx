@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import API_BASE_URL from "../constants/constant"
+import {Link} from "react-router";
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -71,11 +72,17 @@ const Connections = ()=>{
                                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                                     
                     </div>
+                    <div className="m-10">
+                        <Link to = {`/chat/${user._id}`}>
+                            <button className="btn btn-secondary bg-green-500/100">Chat</button>
+                        </Link>
+                    </div>
+                    
                 </div>
                             ))}
                     
                     </Carousel>
-                    </div>
+                </div>
             </div>
         </>
     )
